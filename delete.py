@@ -8,7 +8,7 @@ import fnmatch
 
 def login():
     """获取token"""
-    url = 'https://alist.265011.xyz/api/auth/login' #输入Alist地址
+    url = 'https://265011.xyz/api/auth/login' #输入Alist地址
     d = {'Username': 'xiguan', 'Password': '123654789'} #输入账户密码
     r = requests.post(url, data=d, verify=False)
     data = json.loads(r.text)
@@ -17,7 +17,7 @@ def login():
 
 def list_files(token, dir_path, max_retries=3, retry_delay=5):
     """获取目录文件列表"""
-    url = "https://alist.265011.xyz/api/fs/list"
+    url = "https://265011.xyz/api/fs/list"
     headers = {
         'Authorization': token,
         'Content-Type': 'application/json'
@@ -38,7 +38,7 @@ def list_files(token, dir_path, max_retries=3, retry_delay=5):
 
 def remove_files(token, file_names, dir_path, max_retries=3, retry_delay=5):
     """批量删除文件"""
-    url = "https://alist.265011.xyz/api/fs/remove"
+    url = "https://265011.xyz/api/fs/remove"
     headers = {
         'Authorization': token,
         'Content-Type': 'application/json'
