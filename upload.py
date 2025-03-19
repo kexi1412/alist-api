@@ -6,7 +6,7 @@ import glob
 import time
 
 # 登录
-login_url = 'https://alist.265011.xyz/api/auth/login' #输入Alist地址
+login_url = 'https://265011.xyz/api/auth/login' #输入Alist地址
 credentials = {'Username': 'xiguan', 'Password': '123654789'} #输入账户密码
 response = requests.post(login_url, data=credentials, verify=False)
 auth_data = json.loads(response.text)
@@ -17,7 +17,7 @@ if not token:
     exit()
 
 # 上传配置
-upload_url = "https://alist.265011.xyz/api/fs/form"
+upload_url = "https://265011.xyz/api/fs/form"
 patterns = ['AnyKernel3-KernelSU_Next-SUSFS-For-*', 'Image-KernelSU_Next-SUSFS-*']
 max_retries = 10
 retry_delay = 10
